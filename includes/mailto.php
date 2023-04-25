@@ -1,7 +1,6 @@
 <?php
-require dirname(dirname(dirname(__FILE__))).'/vendor/autoload.php';
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
+include 'phpmailer/phpmailer.php';
+include 'phpmailer/smtp.php';
 //include_once 'constants.php';
 /**
  * Description of mailto
@@ -53,13 +52,6 @@ class mailto {
                 $this->mail->SMTPAuth = true;
                 $this->mail->Username = $this->user;
                 $this->mail->Password = $this->pass;
-                $this->mail->SMTPOptions = array(
-                    'ssl' => array(
-                    'verify_peer' => false,
-                    'verify_peer_name' => false,
-                    'allow_self_signed' => true
-                    )
-                );
 //                echo "Usuario: ".  $this->user."<br>";
 //                echo "Pass: ".  $this->pass."<br>";
 //                echo "Port: ". $this->port."<br>";
