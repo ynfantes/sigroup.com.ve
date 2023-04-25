@@ -1,6 +1,7 @@
 <?php
 include_once '../includes/constants.php';
 include_once '../includes/mailto.php';
+$result = [];
 $message="Contacto ".TITULO."\n";
 $message.=$_POST["email"]."\n";
 $message.=$_POST["nombre"]."\n";
@@ -14,9 +15,9 @@ $email = "sigroupvzla@gmail.com";
 if ($_POST["email"]!='' && $_POST["nombre"]!='' && $_POST["mensaje"]!='') {
     
     $mail = new mailto(SMTP);
-    $result = $mail->enviar_email($subject, $message,"", $email,$_POST['nombre']);
+    $res = $mail->enviar_email($subject, $message,"", $email,$_POST['nombre']);
     
-    if ($result=="") {
+    if ($res == "") {
         $result['suceed'] = true;
         $result['mensaje'] = "Mensaje enviado con éxito!\r\nLo estaremos contactando a la brevedad. Gracias por contactarnos.";
     } else {
