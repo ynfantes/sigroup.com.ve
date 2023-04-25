@@ -19,16 +19,11 @@ $twig = new Twig_Environment($loader, array(
 $twig->addExtension(new extensiones());
 $twig->addExtension(new Twig_Extension_Debug());
 
-//</editor-fold>
-//<editor-fold defaultstate="collapsed" desc="autoload">
+//autoload
+spl_autoload_register( function($class) {
+    include_once SERVER_ROOT.'/includes/'.$class.'.php';
+});
 
-function __autoload($clase) {
-    include_once SERVER_ROOT . "/includes/" . $clase . ".php";
-}
-
-spl_autoload_register("__autoload", false);
-//</editor-fold>
-//<editor-fold defaultstate="collapsed" desc="cerrar sesión">
 if (isset($_GET['logout']) && $_GET['logout'] == true) {
     $user_logout = new propietario();
     $user_logout->logout();

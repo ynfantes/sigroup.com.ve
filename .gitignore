@@ -2,3 +2,4 @@
 cancelacion.gastos/*.pdf
 enlinea/avisos/*.pdf
 data/*.txt
+includes/configuracion.php
