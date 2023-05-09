@@ -438,9 +438,23 @@ CREATE TABLE `propietarios` (
   `recibos` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+CREATE TABLE `movimiento_caja` (
+  `id` int(11) NOT NULL,
+  `fecha_movimiento` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `numero_recibo` varchar(20) NOT NULL,
+  `forma_pago` varchar(20) NOT NULL,
+  `monto` double NOT NULL DEFAULT 0,
+  `cuenta` varchar(50) NOT NULL,
+  `descripcion` varchar(200) NOT NULL,
+  `id_inmueble` varchar(4) NOT NULL,
+  `id_apto` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 --
 -- Índices para tablas volcadas
 --
+
+ALTER TABLE `movimiento_caja`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `accion`
@@ -595,6 +609,12 @@ ALTER TABLE `propietarios`
 --
 ALTER TABLE `sesion`
   ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de la tabla `movimiento_caja`
+--
+ALTER TABLE `movimiento_caja`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `accion`
