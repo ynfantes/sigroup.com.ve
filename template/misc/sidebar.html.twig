@@ -27,7 +27,7 @@ ace.settings.check('sidebar', 'fixed')
 
 <ul class="submenu">
 <li class="">
-<a href="{{ constant("URL_SISTEMA")}}/propietario/actualizar">
+<a href="{{ constant("URL_SISTEMA")}}/propietario/?accion=actualizar">
 <i class="menu-icon fa fa-caret-right"></i>
 Datos Personales
 </a>
@@ -36,7 +36,7 @@ Datos Personales
 </li>
 
 <li class="">
-<a href="{{constant("URL_SISTEMA")}}/propietario/actualizar/clave">
+<a href="{{constant("URL_SISTEMA")}}/propietario/?accion=actualizar&id=clave">
 <i class="menu-icon fa fa-caret-right"></i>
 Cambiar Contraseña
 </a>
@@ -45,7 +45,7 @@ Cambiar Contraseña
 </ul>
 </li>
 <li class="hsub">
-<a href="{{constant("URL_SISTEMA")}}/inmueble/junta-condominio">
+<a href="{{constant("URL_SISTEMA")}}/inmueble/?accion=junta-condominio">
 <i class="menu-icon fa fa-building"></i>
 <span class="menu-text"> Junta de Condominio </span>
 </a>
@@ -58,7 +58,7 @@ Cambiar Contraseña
 <b class="arrow"></b>
 </li>
 <li class="hsub">
-<a href="{{constant("URL_SISTEMA")}}/pago/registrar">
+<a href="{{constant("URL_SISTEMA")}}/pago/?accion=registrar">
 <i class="menu-icon fa fa-btc"></i>
 <span class="menu-text"> Pago de Condominio </span>
 </a>
@@ -72,7 +72,7 @@ Cambiar Contraseña
 <b class="arrow"></b>
 </li-->
 <li class="">
-<a href="{{constant("URL_SISTEMA")}}/pago/historico">
+<a href="{{constant("URL_SISTEMA")}}/pago/?accion=historico">
 <i class="menu-icon fa fa-paypal"></i>
 <span class="menu-text"> Histórico de Pagos</span>
 </a>
@@ -87,7 +87,7 @@ Cambiar Contraseña
 </li-->
 {#% if session.junta != '' %#}
 <li class="">
-<a href="{{constant("URL_SISTEMA")}}/inmueble/cuenta">
+<a href="{{constant("URL_SISTEMA")}}/inmueble/?accion=cuenta">
 <i class="menu-icon fa fa-bar-chart-o"></i>
 <span class="menu-text"> Edo. de Cuenta Inmueble </span>
 </a>
