@@ -99,7 +99,7 @@
                                             <tr>
                                                 <td style="text-align: center">
                                                     {% if factura.aviso %}
-                                                        <a href="{{ constant('URL_SISTEMA')}}/avisos/ver/{{factura.numero_factura}}" target="_blank">{{ factura.numero_factura}}</a>
+                                                        <a href="{{constant('URL_SISTEMA')}}/avisos/?accion=ver&id={{factura.numero_factura}}" target="_blank">{{ factura.numero_factura}}</a>
                                                     {% else %}
                                                         <abbr title="Aviso de Cobro NO DISPONIBLE" class="initialism">{{ factura.numero_factura}}</abbr>
                                                     {%endif %}

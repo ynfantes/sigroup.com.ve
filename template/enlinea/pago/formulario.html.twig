@@ -201,7 +201,7 @@
                                                     <div class="form-group">
                                                         <label for="banco_destino" class="control-label col-xs-12 col-sm-3 no-padding-right">Banco Destino</label>
                                                         <div class="col-xs-12 col-sm-9"><div class="clearfix">
-                                                                {% if cuentas[0].inmueble.cuentas_bancarias is defined and cuentas[0].inmueble.cuentas_bancarias is not null %}
+                                                                {% if cuentas[0].inmueble.cuentas_bancarias|length > 1 %}
                                                                     <select name="banco_destino" class="ignore">
                                                                         {% set dato = '' %}
                                                                         {% for cuenta in cuentas[0].inmueble.cuentas_bancarias %}

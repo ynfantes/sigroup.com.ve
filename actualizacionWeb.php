@@ -11,7 +11,20 @@ include_once 'includes/factura.php';
 
 $db = new db();
 
-$tablas = array("factura_detalle", "facturas", "propiedades", "propietarios", "junta_condominio", "inmueble", "inmueble_deuda_confidencial","grupo","grupo_propietario","fondos_movimiento","cancelacion_gastos","movimiento_caja");
+$tablas = [
+    "factura_detalle", 
+    "facturas", 
+    "propiedades", 
+    "propietarios", 
+    "junta_condominio", 
+    "inmueble", 
+    "inmueble_deuda_confidencial",
+    "grupo",
+    "grupo_propietario",
+    "fondos_movimiento",
+    "cancelacion_gastos",
+    "movimiento_caja"
+];
 
 if (isset($_GET['codinm'])) {
     $codinm = $_GET['codinm'];

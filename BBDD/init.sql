@@ -740,3 +740,96 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Base de datos: `administ_sigroup`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `bancos`
+--
+
+CREATE TABLE `bancos` (
+  `nombre` text DEFAULT NULL,
+  `codigo` text DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `inactivo` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `bancos`
+--
+
+INSERT INTO `bancos` (`nombre`, `codigo`, `id`, `inactivo`) VALUES
+('Central de Venezuela', '0001', 1, 0),
+('Industrial de Venezuela', '0003', 2, 0),
+('Venezuela ', '0102', 3, 0),
+('Venezolano de Crédito', '0104', 4, 0),
+('Mercantil', '0105', 5, 0),
+('Provincial', '0108', 6, 0),
+('Bancaribe', '0114', 7, 0),
+('Exterior', '0115', 8, 0),
+('Occidental de Descuento', '0116', 9, 0),
+('Caroní', '0128', 10, 0),
+('Banesco', '0134', 11, 0),
+('Sofitasa', '0137', 12, 0),
+('Plaza', '0138', 13, 0),
+('Gente Emprendedora', '0146', 14, 0),
+('Pueblo Soberano', '0149', 15, 0),
+('BFC Banco Fondo Común', '0151', 16, 0),
+('100% Banco', '0156', 17, 0),
+('DelSur', '0157', 18, 0),
+('Tesoro', '0163', 19, 0),
+('Agrícola de Venezuela', '0166', 20, 0),
+('Bancrecer', '0168', 21, 0),
+('Mi Banco', '0169', 22, 0),
+('Activo', '0171', 23, 0),
+('Bancamiga', '0172', 24, 0),
+('Internacional de Desarrollo', '0173', 25, 0),
+('Banplus', '0174', 26, 0),
+('Bicentenario', '0175', 27, 0),
+('Espirito Santo', '0176', 28, 0),
+('Fuerza Armada Nacional Bolivariana', '0177', 29, 0),
+('Citibank', '0190', 30, 0),
+('BNC', '0191', 31, 0),
+('Instituto Municipal de Crédito Popular', '0601', 32, 0),
+('Portal de pagos Mercantil', '9999', 33, -1),
+('Ally Bank', 'ZELLE', 34, 0),
+('Bank of America', 'ZELLE', 35, 0),
+('Capital One', 'ZELLE', 36, 0),
+('Chase Bank', 'ZELLE', 37, 0),
+('Citibank', 'ZELLE', 38, 0),
+('Fifth Third Bank', 'ZELLE', 39, 0),
+('FirstBank', 'ZELLE', 40, 0),
+('PNC Bank', 'ZELLE', 41, 0),
+('TD Bank', 'ZELLE', 42, 0),
+('U.S. Bank', 'ZELLE', 43, 0),
+('Wells Fargo', 'ZELLE', 44, 0);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `bancos`
+--
+ALTER TABLE `bancos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `bancos`
+--
+ALTER TABLE `bancos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+COMMIT;
