@@ -13,7 +13,7 @@ google.setOnLoadCallback(drawChart);
 
 function drawChart() {
 var data_facturacion = $.ajax({
-url: "{{constant("URL_SISTEMA")}}/inmueble/facturacion",
+url: "{{constant("URL_SISTEMA")}}/inmueble/?accion=facturacion",
 dataType:"json",
 async: false
 }).responseText;
@@ -43,7 +43,7 @@ var chart = new google.visualization.ColumnChart(document.getElementById('sales-
 chart.draw(data, options);
 
 var data_cobranza = $.ajax({
-url: "{{constant("URL_SISTEMA")}}/inmueble/cobranza",
+url: "{{constant("URL_SISTEMA")}}/inmueble/?accion=cobranza",
 dataType:"json",
 async: false
 }).responseText;
