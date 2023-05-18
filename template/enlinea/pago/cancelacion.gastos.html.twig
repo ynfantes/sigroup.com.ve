@@ -98,7 +98,7 @@ Pagos
 
             <td style="text-align: center">
             {% if factura.recibo %}
-                <a href="{{ constant('URL_SISTEMA')}}/pago/cancelacion/{{factura.numero_factura}}" target="_blank">{{factura.numero_factura}}</a>
+                <a href="{{constant('URL_SISTEMA')}}/pago/?accion=cancelacion&id={{factura.numero_factura}}" target="_blank">{{factura.numero_factura}}</a>
             {% else %}
                 <abbr title="Cancelación de Gastos NO DISPONIBLE" class="initialism">{{factura.numero_factura}}</abbr>
             {%endif %}
@@ -109,7 +109,7 @@ Pagos
             {%endif%}
             <td class="hidden-phone">
                 {% if factura.recibo %}
-                    <a data-toggle="modal" title="click para descargar" href="{{ constant('URL_SISTEMA')}}/pago/cancelacion/{{factura.numero_factura}}" class="btn btn-xs btn-success" target="_blank"><i class="ace-icon fa fa-download bigger-120"></i></a>
+                    <a data-toggle="modal" title="click para descargar" href="{{ constant('URL_SISTEMA')}}/pago?accion=cancelacion&id={{factura.numero_factura}}" class="btn btn-xs btn-success" target="_blank"><i class="ace-icon fa fa-download bigger-120"></i></a>
                 {% else %}
                     <span class="label label-danger arrowed">No Disponible</span>
                 {% endif %}
