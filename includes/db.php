@@ -702,7 +702,13 @@ Class Misc {
         foreach ($parametros as $variable) {
             if (is_array($variable)) {
                 foreach ($variable as $indice => $valor) {
-                    $salida.= "<p><b>" . $indice . ":</b> <span>" . $valor . "</span></p>\n";
+                    if (is_array($valor)) {
+                        foreach ($valor as $i => $v) {
+                            $salida.= "<p><b>".$indice."[".$i."]:</b><span>".$v."</span></p>\n";
+                        }
+                    } else {
+                        $salida.= "<p><b>".$indice.":</b> <span>".$valor."</span></p>\n";
+                    }
                 }
             } else {
                 $type = null;
