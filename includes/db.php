@@ -51,7 +51,7 @@ Class db {
             $this->mysqli->query("SET NAMES 'utf8'");
             
         } catch (Exception $exc) {
-            echo $this->mysqli->connect_errno . " " . $this->mysqli->connect - error;
+            echo $this->mysqli->connect_errno . " " . $this->mysqli->connect_error;
             echo $exc->getTraceAsString();
             exit("No se pudo conectar con la Base de Datos. Consulte al administrador del sistema.");
         }
@@ -290,6 +290,7 @@ Class db {
     public function insert_batch($tabla = null, $datos = null) {
         
         try {
+            $query = '';
             if ($tabla != null && $datos != null) {
                 $columnas = array_keys($datos);
                 $valores = implode (",", $datos);
@@ -608,7 +609,7 @@ Class Misc {
      * @param Boolean $output_entities indica si reemplaza los caracteres especiales por entidades html
      * @return <type>
      */
-    public static function trim_text($input, $length, $ellipses = true, $strip_html = true, $output_entities = false) {
+    public static function trim_text($input, $length = 0, $ellipses = true, $strip_html = true, $output_entities = false) {
         // Strip tags, if desired
         if ($strip_html) {
             $input = strip_tags($input);
