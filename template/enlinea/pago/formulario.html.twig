@@ -518,7 +518,7 @@
                             var datos = new FormData($("#validation-form")[0]);
 
                             $.ajax({
-                                url: "{{constant('URL_SISTEMA')}}/pago/guardar",
+                                url: "{{constant('URL_SISTEMA')}}/pago/?accion=guardar",
                                 type: 'POST',
                                 data: datos,
                                 contentType: false,
